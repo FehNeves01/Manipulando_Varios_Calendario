@@ -1,13 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react'
+import { View, StyleSheet, Text, TouchableOpacity } from 'react-native'
+import BigCalendar from './BigCalendar';
+import CalendarDatePicker from './Calendar_Date_Picker';
+import CalendarEvent from './Calendar_Events';
+import SingleDatePage, { RangeDatePage, TimePickerPage } from './Calendar_Paper_Date';
+
 
 export default function App() {
+
+
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={{ flex: 1, marginTop:45, }}>
+      <CalendarDatePicker />
+      <SingleDatePage />
+      <RangeDatePage />
+      <TimePickerPage />
+      <BigCalendar />
+      <CalendarEvent />
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -18,3 +30,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
